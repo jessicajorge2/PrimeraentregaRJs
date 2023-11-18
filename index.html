@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Solcito</title>
+
+
+</head>
+<body>
+   <header>
+   
+    <h1>Tienda Solcito - ROPA INFANTIL</h1>
+</header>
+
+    <h2>Categorías:</h2>
+    <ul>
+        <li><a href="...">Camisetas</a></li>
+        <li><a href="...">Pantalones</a></li>
+        <li><a href="...">Vestidos</a></li>
+    </ul>
+
+    <h2>Productos Destacados:</h2>
+
+    <div class="container">
+        <div class="product" data-id="1" data-name="Ropa para Niñas 1" data-description="Ropa cómoda y moderna para los más pequeños." data-price="20.00">
+            <img src="../2DA ENTREGA/imagenes/ropa 1.jpg" alt="Ropa para niñas">
+            <h2>Ropa para Niñas</h2>
+            <p>Ropa cómoda y moderna para los más pequeños.</p>
+            <button onclick="agregarAlCarrito(1, 'Ropa para Niñas 1', 20.00)">Comprar</button>
+        </div>
+        <div class="product" data-id="1" data-name="Ropa para Niñas 1" data-description="Ropa cómoda y moderna para los más pequeños." data-price="20.00">
+            <img src="../2DA ENTREGA/imagenes/ropa 2.jpg" alt="Ropa para niñas">
+            <h2>Ropa para Niñas</h2>
+            <p>Ropa cómoda y moderna para los más pequeños.</p>
+            <button onclick="agregarAlCarrito(1, 'Ropa para Niñas 1', 20.00)">Comprar</button>
+        </div>
+        <div class="product" data-id="1" data-name="Ropa para Niñas 1" data-description="Ropa cómoda y moderna para los más pequeños." data-price="20.00">
+            <img src="../2DA ENTREGA/imagenes/ropa 3.jpg" alt="Ropa para niñas">
+            <h2>Ropa para Niñas</h2>
+            <p>Ropa cómoda y moderna para los más pequeños.</p>
+            <button onclick="agregarAlCarrito(1, 'Ropa para Niñas 1', 20.00)">Comprar</button>
+        </div>
+        <div class="product" data-id="1" data-name="Ropa para Niñas 1" data-description="Ropa cómoda y moderna para los más pequeños." data-price="20.00">
+            <img src="../2DA ENTREGA/imagenes/ropa 4.jpg" alt="Ropa para niñas">
+            <h2>Ropa para Niñas</h2>
+            <p>Ropa cómoda y moderna para los más pequeños.</p>
+            <button onclick="agregarAlCarrito(1, 'Ropa para Niñas 1', 20.00)">Comprar</button>
+        </div>
+   
+    </div>
+
+    <script>
+        function agregarAlCarrito(id, nombre, precio) {
+            
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+          
+            let productoExistente = carrito.find(item => item.id === id);
+
+            if (productoExistente) {
+               
+                productoExistente.cantidad++;
+            } else {
+          
+                carrito.push({ id, nombre, precio, cantidad: 1 });
+            }
+
+            
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+
+       
+            alert('Producto agregado al carrito');
+        }
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
